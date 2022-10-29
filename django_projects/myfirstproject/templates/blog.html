@@ -80,6 +80,7 @@ body {
 
 <div class="header">
   <h2>Blog Name</h2>
+  <a href="/blog/create/">Create Blog</a>
 </div>
 
 <div class="row">
@@ -88,7 +89,11 @@ body {
     <div class="card">
       <h2>{{ i.blog_name }}</h2>
       <h5>{{ i.blog_date }}</h5>
-      <img src="{% static 'i.image.path' %}" alt="{{ i.image.path }}">
+      {% if i.image %}
+        <img src="/media/{{ i.image }}" alt="/media/{{ i.image }}">
+      {% else %}
+        No Image
+      {% endif %}
       <p>{{ i.language }}</p>
       <p>{{ i.blog_content }}</p>
     </div>
