@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog</title>
+</head>
+<body>
+    <h1 style="align-items: center;">Update Blog</h1>
+    {{ blog.blog_date|date:'d-m-Y' }}
+    <form action="{% url 'update_blog' blog.id %}" method="post">
+        {% csrf_token %}
+        Blog Name:
+        <input type="text" name="blog_name" value="{{ blog.blog_name }}">
+        <br><br>
+        Content:
+        <textarea name="content"  cols="100" rows="10" >{{ blog.blog_content }}</textarea>
+        <br><br>
+        Image:
+        <input type="file" name="image">
+        <br><br>
+        Date:
+        <input type="date" name="date" value="{{ blog.blog_date|date:'d-m-Y' }}">
+        <br><br>
+        Language:
+        <select name="language" >
+            <option value="hindi" {% if blog.language == "hindi" %} selected {% endif %}>Hindi</option>
+            <option value="english" {% if blog.language == "english" %} selected {% endif %}>English</option>
+        </select>
+        <br><br>
+        <button>Update</button>
+    </form>
+</body>
+</html>

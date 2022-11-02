@@ -75,12 +75,15 @@ body {
   }
 }
 </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <div class="header">
   <h2>Blog Name</h2>
-  <a href="/blog/create/">Create Blog</a>
+  <a href="{% url 'create_blog' %}">Create Blog</a>
 </div>
 
 <div class="row">
@@ -97,6 +100,12 @@ body {
       <p>{{ i.language }}</p>
       <p>{{ i.blog_content }}</p>
     </div>
+    <a href="{% url 'update_blog' i.id %}" class="btn btn-info btn-lg">
+      <span class="glyphicon glyphicon-edit"></span> Edit
+    </a>
+    <a href="{% url 'delete_blog' i.id %}" >
+       Delete
+    </a>
     {% endfor %}
     
   </div>

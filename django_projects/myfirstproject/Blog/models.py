@@ -1,5 +1,3 @@
-from distutils.command.upload import upload
-from enum import unique
 from django.db import models
 
 class Blog(models.Model):
