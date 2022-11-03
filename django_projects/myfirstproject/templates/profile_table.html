@@ -13,7 +13,9 @@
 
 <div class="container">
   <h2>Profile Data</h2>
+  {% include "messages.html" %}
   <a href="{% url 'create_profile' %}"><button>Create Profile</button></a>
+  <a href="{% url 'logout' %}"><button>Logout</button></a>
   <table class="table table-dark table-striped">
     <thead>
       <tr>

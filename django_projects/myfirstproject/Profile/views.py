@@ -2,7 +2,10 @@ from django.shortcuts import redirect, render
 from .models import Profile
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/profile/login/")
 def Create_profile_view(request):
     if request.method == "POST":
         print("iffffffffffffffffff")
@@ -21,6 +24,7 @@ def Create_profile_view(request):
         return render(request, "create_profile.html")
 
 
+@login_required(login_url="/profile/login/")
 def Profile_view(request):
     all_profiles = Profile.objects.all()
     context = {"profiles":all_profiles}
@@ -46,3 +50,29 @@ def register_view(request):
 
     else:
         return render(request, "register.html")
+
+
+def login_view(request):
+    
+    if request.method == "POST":
+        post_data = request.POST
+        user = authenticate(username=post_data["username"], password=post_data["password"])
+        if user == None:
+            messages.error(request, "Username or Password is incorrect")
+            return redirect("/profile/login/")
+        else:
+            login(request, user)
+            messages.info(request, "Logged in successfully")
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(next_url)
+            else:
+                return redirect("/profile/table/")
+
+    else:
+        return render(request, "login.html")
+
+def logout_view(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	return redirect("/profile/login/")
