@@ -68,4 +68,6 @@
 {% for category in categories %}
 <a href="{% url 'category_products' category.id %}">{{ category.name }}</a>
 {% endfor %}
+<a href="{% url 'logout' %}">Logout</a>
+
 </div> 
