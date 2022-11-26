@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+
 
 
 @login_required(login_url="/login/")
@@ -73,3 +75,15 @@ def logout_view(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("/login/")
+
+
+def search_view(request):
+    print("Searchhhhhhhhh ho raha h........")
+    search_query = request.GET["search"]
+
+    products = Product.objects.filter(Q(name__icontains = search_query) | Q(description__icontains = search_query) | Q(price__icontains = search_query))
+    all_categories = Category.objects.all()
+
+    context = {"products": products, "categories":all_categories}
+
+    return render(request, "home.html", context)

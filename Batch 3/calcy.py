@@ -1,0 +1,7 @@
+a = int(input("Enter a number "))
+b = int(input("Enter second number "))
+print("subtrect =",a-b)
+print("modulous =",a%b)
+print("divide =",a/b)
+print("multiply =",a*b)
+print("add =",a+b)

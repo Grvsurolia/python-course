@@ -70,4 +70,15 @@
 {% endfor %}
 <a href="{% url 'logout' %}">Logout</a>
 
+
+<form action="{% url 'search' %}" method="get">
+  <div class="pseudo-search">
+    <input type="text" placeholder="Search..." name="search" autofocus required>
+    
+    <i class="fa fa-globe places"></i>
+    <button class="fa fa-search" type="submit"></button>
+  </div>
+
+</form>
+
 </div> 
