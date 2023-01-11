@@ -11,6 +11,7 @@
 # print(c)
 
 # s = "gaurav"
+# print(s)
 
 # n = 3.14
 
@@ -38,7 +39,7 @@
 # f = 3.33
 # print(type(f))
 
-# s = "jhfvghdfkjg k"
+# s = "This is a string"
 # print(type(s))
 
 ##########################################################
