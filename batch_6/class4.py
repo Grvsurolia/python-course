@@ -44,3 +44,14 @@
 
 # print(float(a))
 # print(type(float(a)))
+
+##################################
+
+# a = 2
+
+# print(a is 2)
+
+# print(a == 2)
+
+# if a is 2:
+#     print("yess")

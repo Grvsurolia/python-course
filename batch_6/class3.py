@@ -1,46 +1,46 @@
 #### variables
 
-# a = 2
+a = 2
 
-# print(a)
+print(a)
 
-# b = 5
-# print(b)
+b = 5
+print(b)
 
-# c = 1000
-# print(c)
+c = 1000
+print(c)
 
-# s = "gaurav"
-# print(s)
+s = "gaurav"
+print(s)
 
-# n = 3.14
+n = 3.14
 
 ################################################
 
 ## data types in python
 
-# a = 2
+a = 2
 # Integer (int)
 
-# s = "gaurav"
-# p = "k"
-# d = "My name is Gaurav, I am a developer"
+s = "gaurav"
+p = "k"
+d = "My name is Gaurav, I am a developer"
 # String (str)
 
-# f = 333.333
+f = 333.333
 # Float (float)
 
 ######################################################
 ### Type of variable
 
-# a = 2
-# print(type(a))
+a = 2
+print(type(a))
 
-# f = 3.33
-# print(type(f))
+f = 3.33
+print(type(f))
 
-# s = "This is a string"
-# print(type(s))
+s = "This is a string"
+print(type(s))
 
 ##########################################################
 
