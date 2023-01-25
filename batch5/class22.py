@@ -94,6 +94,34 @@
 
 #################################################################
 
+# stu1 = {
+#     "name":"dheeraj",
+#     "class":2,
+#     "roll_no":7
+# }
+
+# stu2 = {
+#     "name":"kamlesh",
+#     "class":3,
+#     "roll_no":8
+# }
+
+# [("dheeraj", 2, 7),("Kamelsh",3,8)]
+# l = [stu1,stu2]
+
+# output = []
+
+# for stu in l:
+#     l2 = []
+#     for k,v in stu.items():
+#         l2.append(v)
+#     output.append(tuple(l2))
+
+# print(output)
+
+
+#####################
+
 stu1 = {
     "name":"dheeraj",
     "class":2,
@@ -106,4 +134,14 @@ stu2 = {
     "roll_no":8
 }
 
-# [("dheeraj", 2, 7),("Kamelsh",3,8)]
+def convert_into_list(stu):
+    l2 = []
+    for k,v in stu.items():
+        l2.append(v)
+
+    return tuple(l2)
+
+m = map(convert_into_list, [stu1,stu2])
+
+print(list(m))
+
