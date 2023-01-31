@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
     {% for blog in all_blogs %}
     <div>
         <h3>{{ blog.title }}</h3>
-        <img src="{{ blog.image.path }}" alt="Not Found" width="100px" height="100px">
+        <img src="/media/{{ blog.image }}" alt="Not Found" width="100px" height="100px">
         <p>{{ blog.content }}</p>
         <hr>
     </div>
