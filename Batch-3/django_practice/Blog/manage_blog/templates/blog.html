@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Blog</title>
+    
+</head>
+<body>
+    <div class="two-col">
+        <div class="col1">
+            <h1 class="div_style">My Blog</h1>
+        </div>
+    
+        <div class="col2">
+            <button><a href="{% url 'create_blog' %}">Create Blog</a></button>
+        </div>
+    </div>
+    
+    {% for i in blogs %}
+    <div class="div_style">
+        <h3>{{ i.title }}</h3>
+        <img src="/media/{{ i.image }}" alt="Not Found" width="100px" height="100px">
+        <h4>Writer: {{ i.writer.first_name }} {{ i.writer.last_name }}</h4>
+        <p>{{ i.content }}</p>
+        <hr>
+    </div>
+    {% endfor %}
+   
+</body>
+</html>

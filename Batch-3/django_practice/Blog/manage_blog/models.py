@@ -10,9 +10,9 @@ class CustomUser(AbstractUser):
 
 
 class Blog(models.Model):
-    date = models.DateField()
+    date = models.DateField(auto_now=True)
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="blogs")
+    image = models.ImageField(upload_to="blogs", null=True)
     content = models.TextField()
     writer = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
