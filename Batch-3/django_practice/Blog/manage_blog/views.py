@@ -23,6 +23,7 @@ def CreateBlogView(request):
         blogOb.title = post_data["title"]
         blogOb.content = post_data["content"]
         blogOb.writer = user
+        blogOb.image = request.FILES["image"]
         blogOb.save()
         return redirect("/blog/")
     else:
