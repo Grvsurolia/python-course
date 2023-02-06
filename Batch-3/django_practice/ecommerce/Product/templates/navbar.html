@@ -1,0 +1,10 @@
+<nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      {% for categ in all_categories %}
+      <li><a href="#">{{categ.name}}</a></li>
+      {% endfor %}
+      <!-- <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li> -->
+    </ul>
+  </nav>

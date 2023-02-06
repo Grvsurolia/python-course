@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      header {
+        background-color: lightgray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      header nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      header nav a {
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+      }
+
+      main {
+        margin: 2rem;
+        display: flex;
+      }
+
+      .product-image {
+        width: 50%;
+        text-align: center;
+        margin-right: 2rem;
+      }
+
+      .product-image img {
+        width: 100%;
+      }
+
+      .product-details {
+        width: 50%;
+      }
+
+      .product-details h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .product-details .price {
+        color: gray;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+      }
+
+      .product-details p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin: 1rem 0;
+      }
+
+      .product-details .button {
+        background-color: lightblue;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .product-details .button:hover {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Ecommerce Site</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="product-image">
+        <img src="camera.jpg" alt="Product">
+      </div>
+      <div class="product-details">
+        <h2>Product Name</h2>
+        <div class="price">$49.99</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+          viverra euismod odio, gravida pellentesque urna varius vitae.
+        </p>
+        <a href="#" class="button">Add to Cart</a>
+      </div>
+    </main>
+    </body>
+    </html>
+    
