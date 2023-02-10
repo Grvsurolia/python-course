@@ -18,7 +18,7 @@
             <a href="/product/{{product.id}}/"><img src="/media/{{ product.image }}" alt="Product 1"></a>
             <h3>{{product.name}}</h3>
             <p class="price">${{product.price}}</p>
-            <a href="#" class="button">Add to Cart</a>
+            <a href="/product/{{product.id}}/" class="button">View Product</a>
         </div>
       {% endfor %}
     </main>

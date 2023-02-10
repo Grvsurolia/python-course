@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Blog</title>
+</head>
+<body>
+    <button><a href="{% url 'blog' %}">Back</a></button>
+    <h1>Update Blog</h1>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li style="color:green" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="{% url 'save_updated_blog' blog_data.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">Title:</label>
+        <input type="text" name="title" value="{{ blog_data.title }}">
+        <br>
+        <br>
+        <label for="">Image</label>
+        <input type="file" name="image">
+        <br>
+        <br>
+        <label for="">Content:</label>
+        <textarea name="content" cols="30" rows="10">{{ blog_data.content }}</textarea>
+        <br><br>
+        <label for="">Writer:</label>
+        <select name="writer" id="">
+            {% for user in all_users %}
+            <option value="{{user.id}}" 
+            {% if blog_data.writer.id == user.id %}
+            selected
+            {% endif %}
+            >{{user.first_name}} {{user.last_name}}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">Update Blog</button>
+    </form>
+</body>
+</html>
