@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <!-- <head>
+        <meta charset="UTF-8">
+        <mata http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    </mata name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        </head> -->
+<body>
+    <section>
+
+        {% for i in counter %}
+        <span></span>
+        {% endfor %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+    <div class="signin">
+        <div class="content">
+            <h2>SIGN IN</h2>
+            <div class="inputbox">
+            <input type="text" required="required" name="username">   
+            <i>Username</i>
+        </div class="form">
+        <br>
+        <div class="inputbox">
+            <input type="password" required="required" name="password">
+            <i>Password</i>
+        </div>
+        <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a href="{% url 'register' %}">signup</a>    
+        </div>
+        <input type="submit" value="lOGIN" background-color="#0f0">
+    </div> 
+    </div>
+    </form>
+</section>
+</body>
+</html>

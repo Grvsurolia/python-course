@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+        </head>
+<body>
+    <section>
+
+        {% for i in counter %}
+        <span></span>
+        {% endfor %}
+        <div class="">
+            <div class="">
+                <h2>SIGN UP</h2>
+            <form action="" method="post">
+                {% csrf_token %}
+            <div class="inputbox">
+                <input type="text" name="full_name">
+                <i>Full Name</i>
+            </div>
+            <br>
+            <div class="inputbox">
+                <input type="email" name="email">
+                <i>Email</i>
+            </div>
+            <br>
+
+            <div class="inputbox">
+                <input type="text" name="username">   
+                <i>Username</i>
+            </div>
+            <br>
+            <div class="inputbox">
+                <input type="password" name="password1">
+                <i>Password</i>
+            </div>
+            <br>
+            <div class="inputbox">
+                <input type="password" name="password2">
+                <i>Confirm Password</i>
+            </div>
+            <br>
+        <!-- <div class="links"> -->
+        <!-- <a href="{% url 'login' %}">signin</a>     -->
+        <!-- </div> -->
+        <input type="submit" value="Register" background-color="#0f0">
+    </div> 
+    </div>
+</form>
+    </div>
+</section>
+</body>
+</html>

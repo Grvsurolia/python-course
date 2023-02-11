@@ -71,5 +71,38 @@ l = [11,22,33,44,55,66,77,88,99,100]
 #     "course":"python"
 # }
 
+# name = input("Enter your name: ")
+
+# d["name"] = name
+
+# print(d)
+
+# k = []
+# v = []
+
+# for i in d:
+#     k.append(i)
+#     v.append(d[i])
+
+# print(k)
+# print(v)
+
 # ["name", "class", "roll_no","course"]
 # ["gaurav",2,5,"python"]
+
+##################################################
+
+# l = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m"]
+
+
+# ["aa", "bb", "cc", ............]
+
+# vowels = ["a", "e", "i", "o", "u"]
+
+# for i in l:
+#     if i in vowels:
+#         l.remove(i)
+
+# print(l)
+
+# ["b", "c", "d", "f", "g", "h", "j", "k", "m"]
