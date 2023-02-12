@@ -2,8 +2,15 @@
     <ul>
       <li><a href="{% url 'home' %}">Home</a></li>
       {% for categ in all_categories %}
-      <li><a href="#">{{categ.name}}</a></li>
+      <li><a href="{% url 'category_product' categ.id %}">{{categ.name}}</a></li>
       {% endfor %}
-      
+      {% if not request.user.is_authenticated %}
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'cart' %}">Cart</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% endif %}
     </ul>
   </nav>
