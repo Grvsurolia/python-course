@@ -1,0 +1,76 @@
+<head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    </head>
+<body>
+    
+    <!-- <h1><b>Salon Name</b> : {{salon.name}}</h1>
+    <h1><b>Salon Start Time</b> : {{salon.start_time}}</h1>
+    <h1><b>Salon Closing Time</b> : {{salon.end_time}}</h1>
+    <hr> -->
+    <h1>Salon Name</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Start Time</th>
+            <th>Close Time</th>
+        </tr>
+        <tr>
+            <td>{{salon.name}}</td>
+            <td>{{salon.start_time}}</td>
+            <td>{{salon.end_time}}</td>
+        </tr>
+    </table>
+<hr>
+
+    <h1>Services: </h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Service Time Taken</th>
+        </tr>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.name }}</td>
+            <td>{{ service.service_time_taken }}</td>
+        </tr>
+        {% endfor %}
+</table>
+<hr>
+
+<h1>Bookings: </h1>
+<table>
+    <tr>
+        <th>Service</th>
+        <th>Booking Time</th>
+    </tr>
+    {% for booking in bookings %}
+    <tr>
+        <td>{{ booking.service.name }}</td>
+        <td>{{ booking.booking_time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+
+
+<h1>Available Time</h1>
+{% for i in available_time %}
+{{ i }}<br>
+{% endfor %}
+</body>
