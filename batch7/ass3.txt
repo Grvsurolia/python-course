@@ -1,0 +1,22 @@
+Enter a string: abcde
+Enter second string: edcba
+
+Write a program to find if First string is reverse of second or not ?
+
+###########################################
+
+l = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+
+Write a program to extract vowals from the list 
+
+output:
+["a", "e", "i"]
+
+##########################################
+
+d = {1:11, 2:22, 3:33}
+
+output:
+[[1,11],[2,22],[3,33]]
+
+###########################################
