@@ -203,3 +203,10 @@
 # Modulus is ---
 # Expo is ---
 # Floor division is ---
+
+### QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+
+# Enter a question to ask: What is your age
+# What is your age: 22
+# Answer for 'What is you age' is '22'
+####################################################
