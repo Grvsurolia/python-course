@@ -12,6 +12,11 @@
 ## RANGE FUNCTION
 
 # range(start, end+1, steps)
+
+# print(range(1,11,2))
+# for i in range(10):
+#     print(i)
+
 ############################
 # for i in range(1,11):
 #     print(i)
@@ -55,6 +60,8 @@
 # # print(x.isdigit())
 # if not x.isdigit():
 #     print('please enter only integer')
+
+# integer should be of 5 or more digit
 
 ### QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 
