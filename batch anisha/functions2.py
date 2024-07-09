@@ -50,9 +50,9 @@
 # First name: min len = 3, max len = 15, first char should not be numric, required
 # Last Name: max len = 15, first char should not be numric, not required
 # Email: min len = 5, max len = 25, first char should not be numric, an @ must be there, a . must be there, @ should always come before ., there must be a char before @
-# Phone Number: 
-# Password
-# Confirm password
+# Phone Number: min len 6, max len 10, only numbers, 
+# Password: Apply validations by your own
+# Confirm password: Apply validations by your own
 
 # Apply all required validations in the above fields
 
