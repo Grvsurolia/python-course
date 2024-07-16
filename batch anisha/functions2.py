@@ -79,8 +79,10 @@
 
 # l = ['a', 'A', 'b', 'B', 'c', 'C', .............. , 'z', 'Z']
 
+# ['name',"Gaurav","class":"Python","roll_no",2,....................]
+
 # OUTPUT: {'a':'A', 'b':'B'....................., 'z':'Z'}
 
-# Take the above OUTPUT as INPUT, and reverse the valiues and keys i.e.
+# Take the above OUTPUT as INPUT, and reverse the values and keys i.e.
 
 # OUTPUT: {'A':'a', 'B':'a'...................,'Z':'z'}
