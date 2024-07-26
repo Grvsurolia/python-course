@@ -76,16 +76,16 @@
 
 # MULTIPLE INHERITANCE
 
-# class A:
-#     print("AAAAAAAAAAAAAAAA")
-#     a = 2
+class A:
+    print("AAAAAAAAAAAAAAAA")
+    a = 2
 
-# class B:
-#     print("BBBBBBBBBBBBBBBB")
-#     b = 3
+class B:
+    print("BBBBBBBBBBBBBBBB")
+    b = 3
 
-# class C(A,B):
-#     c = 4
+class C(A,B):
+    c = 4
 
 # cOb = C()
 # print(cOb.a)
@@ -117,4 +117,3 @@
 # print(dOb.d)
 
 ###################################
-
