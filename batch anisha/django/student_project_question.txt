@@ -1,0 +1,10 @@
+Project - Student
+
+student_app
+
+Model: Student_detail
+
+name, class, roll no, ..........
+
+template: create_student
+

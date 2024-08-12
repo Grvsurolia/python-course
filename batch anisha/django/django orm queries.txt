@@ -1,0 +1,305 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\grvsu> D:
+PS D:\> cd '.\python-course\batch anisha\django\first_project\'
+PS D:\python-course\batch anisha\django\first_project> dir
+
+
+    Directory: D:\python-course\batch anisha\django\first_project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        04-08-2024  10:30 AM                blog_app
+d-----        04-08-2024  10:29 AM                first_app
+d-----        30-07-2024  10:38 PM                first_project
+-a----        04-08-2024  10:28 AM         135168 db.sqlite3
+-a----        30-07-2024  10:30 PM            691 manage.py
+
+
+PS D:\python-course\batch anisha\django\first_project> python .\manage.py shell
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 8.5.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from blog_app.models import Blog_data
+
+In [2]: Blog_data
+Out[2]: blog_app.models.Blog_data
+
+In [3]: all_blogs = Blog_data.objects.all()
+
+In [4]: all_blogs
+Out[4]: <QuerySet []>
+
+In [5]: all_blogs = Blog_data.objects.all()
+
+In [6]: all_blogs
+Out[6]: <QuerySet [<Blog_data: klsjfhfs>]>
+
+In [7]: all_blogs[0]
+Out[7]: <Blog_data: klsjfhfs>
+
+In [8]: all_blogs[0].writer
+Out[8]: 'kjshgfd'
+
+In [9]: all_blogs[0].content
+Out[9]: ',kjndk gjlkdsfbhfdbhfdb khdsuf'
+
+In [10]:
+
+In [10]:
+
+In [10]: a = Blog_data.objects.get(title='title')
+
+In [11]: a
+Out[11]: <Blog_data: title>
+
+In [12]: a.title
+Out[12]: 'title'
+
+In [13]: a.content
+Out[13]: 'kjdfhgjdf gkdfkjbdfkb hdfbhdbvhjdb dbkjn bhfdbv kjdsbhdf nvdfb kdjfnb hdf vdbvhudfbvfdhbjhdsf bvfdb hdbvhfb kmdb vfdhb vjhdbv,hj sdfhbdfhvbdfhvbsmdfn ghfdbv ,jdfg jhsdfbvkljdf gjh kldfb df bjkldf vkjldsfv,jsdbjkl vdsnvcj,bdgfsil vndf,j bhfdbljif bgsfdbsnkjdfhgjdf gkdfkjbdfkb hdfbhdbvhjdb dbkjn bhfdbv kjdsbhdf nvdfb kdjfnb hdf vdbvhudfbvfdhbjhdsf bvfdb hdbvhfb kmdb vfdhb vjhdbv,hj sdfhbdfhvbdfhvbsmdfn ghfdbv ,jdfg jhsdfbvkljdf gjh kldfb df bjkldf vkjldsfv,jsdbjkl vdsnvcj,bdgfsil vndf,j bhfdbljif bgsfdbsnkjdfhgjdf gkdfkjbdfkb hdfbhdbvhjdb dbkjn bhfdbv kjdsbhdf nvdfb kdjfnb hdf vdbvhudfbvfdhbjhdsf bvfdb hdbvhfb kmdb vfdhb vjhdbv,hj sdfhbdfhvbdfhvbsmdfn ghfdbv ,jdfg jhsdfbvkljdf gjh kldfb df bjkldf vkjldsfv,jsdbjkl vdsnvcj,bdgfsil vndf,j bhfdbljif bgsfdbsnkjdfhgjdf gkdfkjbdfkb hdfbhdbvhjdb dbkjn bhfdbv kjdsbhdf nvdfb kdjfnb hdf vdbvhudfbvfdhbjhdsf bvfdb hdbvhfb kmdb vfdhb vjhdbv,hj sdfhbdfhvbdfhvbsmdfn ghfdbv ,jdfg jhsdfbvkljdf gjh kldfb df bjkldf vkjldsfv,jsdbjkl vdsnvcj,bdgfsil vndf,j bhfdbljif bgsfdbsnkjdfhgjdf gkdfkjbdfkb hdfbhdbvhjdb dbkjn bhfdbv kjdsbhdf nvdfb kdjfnb hdf vdbvhudfbvfdhbjhdsf bvfdb hdbvhfb kmdb vfdhb vjhdbv,hj sdfhbdfhvbdfhvbsmdfn ghfdbv ,jdfg jhsdfbvkljdf gjh kldfb df bjkldf vkjldsfv,jsdbjkl vdsnvcj,bdgfsil vndf,j bhfdbljif bgsfdbsn'
+
+In [14]:
+
+In [14]: b = Blog_data.objects.get(title="title 2")
+---------------------------------------------------------------------------
+MultipleObjectsReturned                   Traceback (most recent call last)
+Cell In [14], line 1
+----> 1 b = Blog_data.objects.get(title="title 2")
+
+File ~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\django\db\models\manager.py:85, in BaseManager._get_queryset_methods.<locals>.create_method.<locals>.manager_method(self, *args, **kwargs)
+     84 def manager_method(self, *args, **kwargs):
+---> 85     return getattr(self.get_queryset(), name)(*args, **kwargs)
+
+File ~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\django\db\models\query.py:653, in QuerySet.get(self, *args, **kwargs)
+    649 if not num:
+    650     raise self.model.DoesNotExist(
+    651         "%s matching query does not exist." % self.model._meta.object_name
+    652     )
+--> 653 raise self.model.MultipleObjectsReturned(
+    654     "get() returned more than one %s -- it returned %s!"
+    655     % (
+    656         self.model._meta.object_name,
+    657         num if not limit or num < limit else "more than %s" % (limit - 1),
+    658     )
+    659 )
+
+MultipleObjectsReturned: get() returned more than one Blog_data -- it returned 2!
+
+In [15]: b = Blog_data.objects.filter(title="title 2")
+
+In [16]: b
+Out[16]: <QuerySet [<Blog_data: title 2>, <Blog_data: title 2>]>
+
+In [17]: b[0].writer
+Out[17]: 'anisha'
+
+In [18]: b[1].writer
+Out[18]: 'gaurav'
+
+In [19]: b[1].id
+Out[19]: 4
+
+In [20]:
+
+In [20]:
+
+In [20]:
+
+In [20]:
+
+In [20]:
+
+In [20]: c = Blog_data(tile="title 3", writer="Ram", content="kjsfhg skjgdfbgkdhfgdhb hjdb hdfb hgbh djgbdfkjsfjgbfdjkb")
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In [20], line 1
+----> 1 c = Blog_data(tile="title 3", writer="Ram", content="kjsfhg skjgdfbgkdhfgdhb hjdb hdfb hgbh djgbdfkjsfjgbfdjkb")
+
+File ~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\django\db\models\base.py:565, in Model.__init__(self, *args, **kwargs)
+    563     if unexpected:
+    564         unexpected_names = ", ".join(repr(n) for n in unexpected)
+--> 565         raise TypeError(
+    566             f"{cls.__name__}() got unexpected keyword arguments: "
+    567             f"{unexpected_names}"
+    568         )
+    569 super().__init__()
+    570 post_init.send(sender=cls, instance=self)
+
+TypeError: Blog_data() got unexpected keyword arguments: 'tile'
+
+In [21]: c = Blog_data(title="title 3", writer="Ram", content="kjsfhg skjgdfbgkdhfgdhb hjdb hdfb hgbh djgbdfkjsfjgbfdjkb")
+
+In [22]: c
+Out[22]: <Blog_data: title 3>
+
+In [23]: c.save()
+
+In [24]: d = Blog_data(title="title 4", writer="Shyam", content="kjsfhg skjgdfbgkdhfgdhb hjdb hdfb hgbh djgbdfkjsfjgbfdjkb")
+
+In [25]: d.title
+Out[25]: 'title 4'
+
+In [26]: d.id
+
+In [27]: d.save()
+
+In [28]: d.id
+Out[28]: 6
+
+In [29]:
+
+In [29]:
+
+In [29]:
+
+In [29]:
+
+In [29]:
+
+In [29]:
+
+In [29]: e = Blog_data.obejcts.get(title='title 4')
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In [29], line 1
+----> 1 e = Blog_data.obejcts.get(title='title 4')
+
+AttributeError: type object 'Blog_data' has no attribute 'obejcts'
+
+In [30]: e = Blog_data.objects.get(title='title 4')
+
+In [31]: e
+Out[31]: <Blog_data: title 4>
+
+In [32]: e.writer = "Shyaam"
+
+In [33]: e
+Out[33]: <Blog_data: title 4>
+
+In [34]: e.writer
+Out[34]: 'Shyaam'
+
+In [35]: e.save()
+
+In [36]:
+
+In [36]:
+
+In [36]:
+
+In [36]:
+
+In [36]: f = Blog_data.objects.filter(title="title 2")
+
+In [37]: f
+Out[37]: <QuerySet [<Blog_data: title 2>, <Blog_data: title 2>]>
+
+In [38]: f.title = "title 22"
+
+In [39]: f
+Out[39]: <QuerySet [<Blog_data: title 2>, <Blog_data: title 2>]>
+
+In [40]: f[0].title
+Out[40]: 'title 2'
+
+In [41]: f[0].title = "title 22"
+
+In [42]: f[0].title
+Out[42]: 'title 2'
+
+In [43]: f[0]
+Out[43]: <Blog_data: title 2>
+
+In [44]: f[0].title
+Out[44]: 'title 2'
+
+In [45]: f[0].title = "title 22"
+
+In [46]: f[0].title
+Out[46]: 'title 2'
+
+In [47]: f[0].save()
+
+In [48]: f
+Out[48]: <QuerySet [<Blog_data: title 2>, <Blog_data: title 2>]>
+
+In [49]: f[0]
+Out[49]: <Blog_data: title 2>
+
+In [50]: f[0].writer
+Out[50]: 'anisha'
+
+In [51]: f[0].title
+Out[51]: 'title 2'
+
+In [52]: f[0].title = "title 22"
+
+In [53]: f[0].title
+Out[53]: 'title 2'
+
+In [54]: f.update(title="title 22")
+Out[54]: 2
+
+In [55]: f
+Out[55]: <QuerySet []>
+
+In [56]: f = Blog_data.objects.filter(title="title 2")
+
+In [57]: f
+Out[57]: <QuerySet []>
+
+In [58]: f = Blog_data.objects.filter(title="title 22")
+
+In [59]: f
+Out[59]: <QuerySet [<Blog_data: title 22>, <Blog_data: title 22>]>
+
+In [60]: f[0]
+Out[60]: <Blog_data: title 22>
+
+In [61]: f.writer
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In [61], line 1
+----> 1 f.writer
+
+AttributeError: 'QuerySet' object has no attribute 'writer'
+
+In [62]: f[0].writer
+Out[62]: 'anisha'
+
+In [63]: f[0].writer = "AAAA"
+
+In [64]: f[0].writer
+Out[64]: 'anisha'
+
+In [65]: for i in f:
+    ...:     print(i)
+    ...:
+title 22
+title 22
+
+In [66]: for i in f:
+    ...:     i.title = "ttttt"
+    ...:     i.save()
+    ...:
+
+In [67]: f = Blog_data.objects.filter(title="title 22").update(title="title 2")
+
+In [68]: f = Blog_data.objects.filter(title="ttttt").update(title="title 2")
+
+In [69]:
+
+In [69]:
+
+In [69]: g = Blog_data.objects.exclude(title="title 2")
+
+In [70]: g
+Out[70]: <QuerySet [<Blog_data: klsjfhfs>, <Blog_data: title>, <Blog_data: title 3>, <Blog_data: title 4>]>
+
+In [71]:
