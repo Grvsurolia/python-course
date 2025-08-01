@@ -1,0 +1,13 @@
+python -m venv env_name
+
+env_name\Scripts\activate
+
+pip install django 
+
+django-admin startproject projectname
+
+python manage.py startapp app_name 
+
+python manage.py runserver 0.0.0.0:8001
+default port: 8000
+

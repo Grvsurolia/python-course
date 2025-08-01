@@ -8,3 +8,6 @@ name, class, roll no, ..........
 
 template: create_student
 
+Get all student 
+
+Update Student
